@@ -20,10 +20,10 @@ export class InformationService extends BaseService {
 
   /**
    * 批量导入刊物信息
-   * @param publications 刊物信息列表
+   * @param informations 刊物信息列表
    */
-  async batchImport(publications: InformationEntity[]) {
-    return this.InformationEntity.save(publications);
+  async batchImport(informations: InformationEntity[]) {
+    return this.InformationEntity.save(informations);
   }
 
 }

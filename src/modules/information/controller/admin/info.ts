@@ -14,13 +14,8 @@ export class AdminInformationEntity extends BaseController {
     @Inject()
     dictPublicationInfoService: InformationService;
   
-    // @Post('/batchImport', { summary: '批量导入刊物信息' })
-    // async batchImport(@Body('publications') publications: InformationService[]) {
-    //   return this.ok(await this.dictPublicationInfoService.batchImport(publications));
-    // }
-  
-    // @Get('/publisherOptions', { summary: '获取出版社下拉菜单选项' })
-    // async getPublisherOptions() {
-    //   return this.ok(await this.dictPublicationInfoService.getPublisherOptions());
-    // }
+    @Post('/batchImport', { summary: '批量导入刊物信息' })
+    async batchImport(@Body('informations') informations: InformationEntity[]) {
+      return this.ok(await this.dictPublicationInfoService.batchImport(informations));
+    }
 }
